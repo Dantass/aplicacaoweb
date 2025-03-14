@@ -1,21 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const formCadastro = document.getElementById("form-cadastro");
+document.getElementById("formCadastro").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    formCadastro.addEventListener("submit", (event) => {
-        event.preventDefault();
+    const nome = document.getElementById("itemNome").value.trim();
+    const descricao = document.getElementById("itemDescricao").value.trim();
 
-        const nome = document.getElementById("nome").value.trim();
-        const descricao = document.getElementById("descricao").value.trim();
+    if (nome === "" || descricao === "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
 
-        if (nome === "" || descricao === "") {
-            alert("Todos os campos devem ser preenchidos.");
-            return;
-        }
+    const item = { nome, descricao };
+    let itens = JSON.parse(localStorage.getItem("itens")) || [];
+    itens.push(item);
+    localStorage.setItem("itens", JSON.stringify(itens));
 
-        let itens = JSON.parse(localStorage.getItem("itens")) || [];
-        itens.push({ nome, descricao });
-        localStorage.setItem("itens", JSON.stringify(itens));
+    document.getElementById("itemNome").value = "";
+    document.getElementById("itemDescricao").value = "";
 
-        formCadastro.reset();
-    });
+    alert("Item cadastrado!");
+
+    carregarItens();
 });

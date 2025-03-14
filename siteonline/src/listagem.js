@@ -1,19 +1,27 @@
-function atualizarLista() {
-    const listaItens = document.getElementById("lista-itens");
-    let itens = JSON.parse(localStorage.getItem("itens")) || [];
+function carregarItens() {
+    const lista = document.getElementById("listaItens");
+    lista.innerHTML = ""; 
 
-    listaItens.innerHTML = "";
+    const itens = JSON.parse(localStorage.getItem("itens")) || [];
+
+    if (itens.length === 0) {
+        lista.innerHTML = "<p>Nenhum item cadastrado.</p>";
+        return;
+    }
+
     itens.forEach((item, index) => {
         const li = document.createElement("li");
-        li.textContent = `${item.nome} - ${item.descricao}`;
-        
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remover";
-        removeBtn.classList.add("remove-btn");
-        removeBtn.onclick = () => removerItem(index);
-        
-        li.appendChild(removeBtn);
-        listaItens.appendChild(li);
+        li.innerHTML = `
+            <strong>${item.nome}</strong>: ${item.descricao}
+            <button class="remover" data-index="${index}">Remover</button>
+        `;
+        lista.appendChild(li);
+    });
+
+    document.querySelectorAll(".remover").forEach(botao => {
+        botao.addEventListener("click", function() {
+            removerItem(this.dataset.index);
+        });
     });
 }
 
@@ -21,7 +29,7 @@ function removerItem(index) {
     let itens = JSON.parse(localStorage.getItem("itens")) || [];
     itens.splice(index, 1);
     localStorage.setItem("itens", JSON.stringify(itens));
-    atualizarLista();
+    carregarItens(); 
 }
 
-document.addEventListener("DOMContentLoaded", atualizarLista);
+document.addEventListener("DOMContentLoaded", carregarItens);

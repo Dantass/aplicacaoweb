@@ -1,106 +1,102 @@
-* {
+/* Definições gerais */
+body {
+    font-family: "Orbitron", sans-serif; /* Fonte futurista */
+    background-color: #121212; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    text-align: center;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* Estilização do cabeçalho */
+header {
+    padding: 20px;
+    background: #1e1e1e;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #a970ff; /* Roxo futurista */
+}
+
+/* Estilização do menu de navegação */
+nav {
+    margin-top: 10px;
+}
+
+button {
+    background-color: #a970ff;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #7a50cc; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Estilização das seções */
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     padding: 20px;
+}
+
+/* Seção do cadastro e listagem */
+section {
+    width: 80%;
+    max-width: 500px;
+    background: #1e1e1e;
+    padding: 20px;
+    margin-top: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-    text-align: center;
-  }
-  
-  h1, h2 {
-    color: #9d4edd;
-    text-shadow: 0px 0px 10px rgba(157, 78, 221, 0.8);
-  }
-  
-  input, button {
-    width: 100%;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Títulos das seções */
+h2 {
+    color: #a970ff;
+}
+
+/* Inputs do formulário */
+input {
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  input {
-    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #a970ff;
+    background-color: #121212;
     color: white;
-    outline: none;
-    border-bottom: 2px solid #9d4edd;
-  }
-  
-  input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  button {
-    background: #9d4edd;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background: #d6a2e8;
-  }
-  
-  .list {
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.2);
-  }
-  
-  .list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Lista de itens */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #2b2b2b;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
-    transition: 0.3s;
-  }
-  
-  .list-item:hover {
-    background: rgba(255, 255, 255, 0.3);
-  }
-  
-  .nav {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botão de remover */
+.remover {
+    background: red;
+    padding: 5px;
     border-radius: 5px;
-    transition: 0.3s;
-  }
-  
-  .nav a:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
+    font-size: 14px;
+}
