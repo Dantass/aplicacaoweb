@@ -16,5 +16,5 @@ Este projeto é uma aplicação web desenvolvida em **HTML, CSS e JavaScript** c
 ## Como Executar o Projeto  
 1. Clone este repositório:  
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/Dantass/aplicacaoweb.git
    
