@@ -1,14 +1,12 @@
-/* Definições gerais */
 body {
-    font-family: "Orbitron", sans-serif; /* Fonte futurista */
-    background-color: #121212; /* Fundo escuro */
-    color: #ffffff; /* Texto branco */
+    font-family: "Orbitron", sans-serif; 
+    background-color: #121212; 
+    color: #ffffff; 
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* Estilização do cabeçalho */
 header {
     padding: 20px;
     background: #1e1e1e;
@@ -18,10 +16,9 @@ header {
 h1 {
     margin: 0;
     font-size: 28px;
-    color: #a970ff; /* Roxo futurista */
+    color: #a970ff; 
 }
 
-/* Estilização do menu de navegação */
 nav {
     margin-top: 10px;
 }
@@ -39,10 +36,9 @@ button {
 }
 
 button:hover {
-    background-color: #7a50cc; /* Tom mais escuro ao passar o mouse */
+    background-color: #7a50cc; 
 }
 
-/* Estilização das seções */
 main {
     display: flex;
     flex-direction: column;
@@ -50,7 +46,6 @@ main {
     padding: 20px;
 }
 
-/* Seção do cadastro e listagem */
 section {
     width: 80%;
     max-width: 500px;
@@ -61,12 +56,10 @@ section {
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
 }
 
-/* Títulos das seções */
 h2 {
     color: #a970ff;
 }
 
-/* Inputs do formulário */
 input {
     width: 90%;
     padding: 10px;
@@ -77,7 +70,6 @@ input {
     border-radius: 5px;
 }
 
-/* Lista de itens */
 ul {
     list-style: none;
     padding: 0;
@@ -93,7 +85,6 @@ li {
     align-items: center;
 }
 
-/* Botão de remover */
 .remover {
     background: red;
     padding: 5px;
