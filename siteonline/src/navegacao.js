@@ -1,12 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("btnCadastro").addEventListener("click", function() {
-        document.getElementById("telaCadastro").style.display = "block";
-        document.getElementById("telaListagem").style.display = "none";
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    function configurarNavegacao() {
+        const btnCadastro = document.getElementById("btnCadastro");
+        const btnListagem = document.getElementById("btnListagem");
+        const telaCadastro = document.getElementById("telaCadastro");
+        const telaListagem = document.getElementById("telaListagem");
 
-    document.getElementById("btnListagem").addEventListener("click", function() {
-        document.getElementById("telaCadastro").style.display = "none";
-        document.getElementById("telaListagem").style.display = "block";
-        carregarItens();
-    });
+        if (!btnCadastro || !btnListagem || !telaCadastro || !telaListagem) return;
+
+        btnCadastro.addEventListener("click", function () {
+            telaCadastro.style.display = "block";
+            telaListagem.style.display = "none";
+        });
+
+        btnListagem.addEventListener("click", function () {
+            telaCadastro.style.display = "none";
+            telaListagem.style.display = "block";
+            carregarItens(); // Certifica que a listagem é atualizada ao abrir
+        });
+    }
+
+    configurarNavegacao(); // Configura a navegação quando a página carregar
 });
