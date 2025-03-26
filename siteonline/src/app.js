@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
 
-    // Criando Header
+    
     const header = document.createElement("header");
     header.innerHTML = `
         <h1>Gerenciador de Itens</h1>
